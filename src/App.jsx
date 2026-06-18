@@ -823,7 +823,7 @@ export default function App() {
         </div>
       )}
 
-      <ScrollToTop />
+      {!showBookingModal && <ScrollToTop />}
     </div>
   );
 }
