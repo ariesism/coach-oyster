@@ -94,29 +94,71 @@ export default function App() {
     },
     {
       id: 3,
-      title: '極致重訓體驗',
-      sub: 'PREMIUM GYM EXPERIENCE',
-      img: './images/1.jpg',
-      desc: '提供學員最頂級的硬體設施、寬敞流暢的動線，以及專注不被打擾的鍛鍊環境。',
-      tag: 'TRAIN HARD'
-    },
-    {
-      id: 4,
       title: '專注心流訓練',
       sub: 'HYPER FOCUS WORKOUT',
       img: './images/4.jpg',
       desc: '排除一切外界雜音，在教練引導下進入極致心流，完全專注於每一次的肌肉收縮。',
       tag: 'FOCUS'
+    },
+    {
+      id: 4,
+      title: '減脂與體態雕塑',
+      sub: 'FAT LOSS & BODY SCULPT',
+      img: './images/6.jpg',
+      desc: '結合燃脂訓練與體態塑形，打造流暢線條與更堅實的核心穩定性。',
+      tag: 'SCULPT'
     }
   ];
 
   const galleryVideos = [
-    { id: 1, title: 'Deadlift Mastery', duration: '03:45', bg: './images/2.jpg', size: 'col-span-2 row-span-2' },
-    { id: 2, title: 'Kettlebell Flow', duration: '02:15', bg: './images/3.jpg', size: 'col-span-1 row-span-1' },
-    { id: 3, title: 'Gym Atmosphere', duration: '05:00', bg: './images/1.jpg', size: 'col-span-1 row-span-2' },
-    { id: 4, title: 'Mindset & Focus', duration: '01:30', bg: './images/4.jpg', size: 'col-span-1 row-span-1' },
-    { id: 5, title: 'Squat Technique', duration: '04:10', bg: './images/3.jpg', size: 'col-span-1 row-span-1' },
-    { id: 6, title: 'Barbell Setup', duration: '02:50', bg: './images/2.jpg', size: 'col-span-1 row-span-1' }
+    {
+      id: 1,
+      title: 'Deadlift Mastery',
+      duration: '03:45',
+      bg: './images/2.jpg',
+      size: 'col-span-2 row-span-2',
+      url: 'https://www.youtube.com/embed/M7lc1UVf-VE?rel=0'
+    },
+    {
+      id: 2,
+      title: 'Kettlebell Flow',
+      duration: '02:15',
+      bg: './images/3.jpg',
+      size: 'col-span-1 row-span-1',
+      url: 'https://www.youtube.com/embed/M7lc1UVf-VE?rel=0'
+    },
+    {
+      id: 3,
+      title: 'Gym Atmosphere',
+      duration: '05:00',
+      bg: './images/1.jpg',
+      size: 'col-span-1 row-span-2',
+      url: 'https://www.youtube.com/embed/M7lc1UVf-VE?rel=0'
+    },
+    {
+      id: 4,
+      title: 'Mindset & Focus',
+      duration: '01:30',
+      bg: './images/4.jpg',
+      size: 'col-span-1 row-span-1',
+      url: 'https://www.youtube.com/embed/M7lc1UVf-VE?rel=0'
+    },
+    {
+      id: 5,
+      title: 'Squat Technique',
+      duration: '04:10',
+      bg: './images/3.jpg',
+      size: 'col-span-1 row-span-1',
+      url: 'https://www.youtube.com/embed/M7lc1UVf-VE?rel=0'
+    },
+    {
+      id: 6,
+      title: 'Barbell Setup',
+      duration: '02:50',
+      bg: './images/2.jpg',
+      size: 'col-span-1 row-span-1',
+      url: 'https://www.youtube.com/embed/M7lc1UVf-VE?rel=0'
+    }
   ];
 
   const handlePlayVideo = (video) => {
@@ -128,8 +170,8 @@ export default function App() {
     const targetMap = {
       '重量力量訓練': '增肌與力量突破',
       '體能與核心突破': '體能與核心強化',
-      '極致重訓體驗': '增肌與力量突破',
-      '專注心流訓練': '專注與極致訓練'
+      '專注心流訓練': '專注與極致訓練',
+      '減脂與體態雕塑': '減脂與體態雕塑'
     };
 
     if (targetMap[programTitle]) {
@@ -271,8 +313,8 @@ export default function App() {
         <div className="relative z-10 w-full border-t border-white/5 bg-[#050505]/80 backdrop-blur-md py-8">
           <div className="max-w-7xl mx-auto px-6 grid grid-cols-1 md:grid-cols-3 gap-8">
             {features.map((feat) => (
-              <div key={feat.id} className="flex gap-4 group">
-                <div className="flex-shrink-0 p-3 bg-white/5 border border-white/10 rounded-lg group-hover:bg-[#4DEEEA]/10 group-hover:border-[#4DEEEA]/30 transition-all duration-300">
+              <div key={feat.id} className="flex gap-5 group items-start">
+                <div className="flex-shrink-0 flex items-center justify-center w-16 h-16 bg-white/5 border border-white/10 rounded-2xl group-hover:bg-[#4DEEEA]/10 group-hover:border-[#4DEEEA]/30 transition-all duration-300">
                   {feat.icon}
                 </div>
                 <div className="space-y-1">
@@ -536,7 +578,7 @@ export default function App() {
 
               {/* Watch Video Button */}
               <button
-                onClick={() => handlePlayVideo({ title: 'Full Coaching System' })}
+                onClick={() => handlePlayVideo({ title: 'Full Coaching System', url: 'https://www.youtube.com/embed/ysz5S6PUM-U' })}
                 className="inline-flex items-center gap-4 group"
               >
                 <div className="w-14 h-14 rounded-full border border-white/20 flex items-center justify-center bg-white/5 group-hover:bg-[#4DEEEA] group-hover:border-[#4DEEEA] group-hover:text-black transition-all duration-300">
@@ -678,15 +720,27 @@ export default function App() {
               <h3 className="text-xl font-bold tracking-wider text-[#4DEEEA] font-display uppercase">
                 {selectedVideo?.title || 'WORKOUT DEMO'}
               </h3>
-              <div className="aspect-video w-full bg-black/60 rounded-lg flex flex-col items-center justify-center border border-white/5 relative overflow-hidden">
-                {selectedVideo?.bg && (
-                  <img src={selectedVideo.bg} alt="Preview" className="absolute inset-0 w-full h-full object-cover opacity-20 filter blur-sm" />
+              <div className="aspect-video w-full rounded-lg overflow-hidden border border-white/5 bg-black">
+                {selectedVideo?.url ? (
+                  <iframe
+                    src={selectedVideo.url}
+                    title={selectedVideo.title}
+                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                    allowFullScreen
+                    className="w-full h-full"
+                  />
+                ) : (
+                  <div className="w-full h-full flex flex-col items-center justify-center text-center p-6">
+                    {selectedVideo?.bg && (
+                      <img src={selectedVideo.bg} alt="Preview" className="absolute inset-0 w-full h-full object-cover opacity-20 filter blur-sm" />
+                    )}
+                    <div className="relative z-10 space-y-3">
+                      <Play className="w-12 h-12 text-[#4DEEEA] mx-auto animate-pulse" />
+                      <p className="text-sm text-gray-300">正在加載運動教學影片示範...</p>
+                      <p className="text-xs text-gray-500">（請為影片新增 `url` 欄位，或啟用 YouTube 播放器）</p>
+                    </div>
+                  </div>
                 )}
-                <div className="relative z-10 text-center space-y-3">
-                  <Play className="w-12 h-12 text-[#4DEEEA] mx-auto animate-pulse" />
-                  <p className="text-sm text-gray-300">正在加載運動教學影片示範...</p>
-                  <p className="text-xs text-gray-500">（在正式環境中此處將串接 HLS 串流或 YouTube 播放器）</p>
-                </div>
               </div>
             </div>
           </div>
